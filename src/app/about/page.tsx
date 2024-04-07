@@ -37,6 +37,8 @@ export default function Home() {
           </p>
         </div>
       </div>
+      <p className={styles.lastline}>-- cool stuff ends here --</p>
+
     </div>
   );
 }

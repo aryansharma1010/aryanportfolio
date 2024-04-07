@@ -305,15 +305,19 @@ const Page = () => {
                 {
                     workDetails?.data.map((item, index) => (
                         <div key={index} className={styles.embedItem}>
-                            {item.itemtype == 'youtube' &&
-                                <YouTubeEmbed url={item.link}
-                                    style={{
-                                        width: '100%',
-                                        aspectRatio: 16 / 9,
-                                        objectFit: 'cover'
-                                    }}
-                                />
-                            }
+                            <div style={{
+                                aspectRatio: 16 / 9
+                            }}>
+                                {item.itemtype == 'youtube' &&
+                                    <YouTubeEmbed url={item.link}
+                                        style={{
+                                            width: '100%',
+                                            aspectRatio: 16 / 9,
+                                            objectFit: 'cover'
+                                        }}
+                                    />
+                                }
+                            </div>
                             {item.itemtype == 'instagram' &&
                                 <InstagramEmbed url={item.link}
                                     style={{
@@ -323,11 +327,12 @@ const Page = () => {
                                     }}
                                 />
                             }
-                            <div style={{
-                                aspectRatio: 1
-                            }}>
-                                {
-                                    item.itemtype == 'behance' &&
+                            {
+                                item.itemtype == 'behance' &&
+                                <div style={{
+                                    aspectRatio: 1
+                                }}>
+
                                     <iframe
                                         src={item.link}
                                         height="100%"
@@ -340,8 +345,9 @@ const Page = () => {
                                         referrerPolicy="strict-origin-when-cross-origin"
                                         loading="lazy"
                                     ></iframe>
-                                }
-                            </div>
+
+                                </div>
+                            }
                         </div>
                     ))
                 }
