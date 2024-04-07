@@ -323,21 +323,25 @@ const Page = () => {
                                     }}
                                 />
                             }
-                            {
-                                item.itemtype == 'behance' &&
-                                <iframe
-                                    src={item.link}
-                                    height="100%"
-                                    width="100%"
-                                    
-                             
-                                    allowFullScreen
-                                    frameBorder="0"
-                                    allow="clipboard-write"
-                                    referrerPolicy="strict-origin-when-cross-origin"
-                                    loading="lazy"
-                                ></iframe>
-                            }
+                            <div style={{
+                                aspectRatio: 1
+                            }}>
+                                {
+                                    item.itemtype == 'behance' &&
+                                    <iframe
+                                        src={item.link}
+                                        height="100%"
+                                        width="100%"
+
+
+                                        allowFullScreen
+                                        frameBorder="0"
+                                        allow="clipboard-write"
+                                        referrerPolicy="strict-origin-when-cross-origin"
+                                        loading="lazy"
+                                    ></iframe>
+                                }
+                            </div>
                         </div>
                     ))
                 }
