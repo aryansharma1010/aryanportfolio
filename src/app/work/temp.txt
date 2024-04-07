@@ -1,0 +1,53 @@
+ <Carousel responsive={responsive}>
+        <div className={styles.work}>
+          <div className={styles.workslider}>
+            <h2>Branding ads I made</h2>
+            <div className={styles.workslideritems}>
+              {
+                BrandingAds.map((item, index) => (
+                  <WorkCard key={index} item={item} />
+
+                ))
+              }
+            </div>
+          </div>
+
+        </div>
+        <div className={styles.work}>
+         
+          <h2>Product ads I made</h2>
+          <div className={styles.workslideritems}>
+            {
+              ProductAds.map((item, index) => (
+                <WorkCard key={index} item={item} />
+
+              ))
+            }
+          </div>
+
+        </div>
+        <div className={styles.work}>
+         
+          <h2>From playing Mario to creating ads on Mario, I grew up. This particular ad garnered the most attention as our brand represents geeks. It broke through the clutter of monotonous ads, while also piquing the interest of viewers, making our job-a-thon look cool.</h2>
+          <div className={styles.workslideritems}>
+            {
+              MarioAds.map((item, index) => (
+                <WorkCard key={index} item={item} />
+
+              ))
+            }
+          </div>
+
+        </div>
+        <div className={styles.work}>
+          <h2>The Gaming Nostalgia Never ends</h2>
+          <div className={styles.workslideritems}>
+            {
+              GamingNostalgiaAds.map((item, index) => (
+                <WorkCard key={index} item={item} />
+              ))
+            }
+          </div>
+
+        </div>
+      </Carousel>

@@ -1,0 +1,171 @@
+.workpage {
+    /* background-color: aqua; */
+    width: 100%;
+    min-height: 100vh;
+    padding: 10px;
+    margin-bottom: 5%;
+
+}
+
+.workpage .textBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 1000px;
+    text-align: center;
+    margin: 30px auto;
+    gap: 20px;
+    padding: 20px;
+}
+
+.workpage h1 {
+    background-color: var(--col2);
+    padding: 5px 10px;
+}
+
+.workpage p {
+    color: var(--col4);
+    font-weight: 700;
+    line-height: 1.5rem;
+    word-spacing: 0.8rem;
+}
+
+
+
+.workpage .socialposts {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+.work {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    /* border-left: 1px dashed var(--col2);
+    border-right: 1px dashed var(--col2); */
+    /* padding: 20px; */
+}
+
+.work h2 {
+    font-size: 16px;
+    text-align: center;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 10px;
+    /* border: 1px solid var(--col2); */
+}
+
+
+.workcard {
+    margin: 10px;
+    background-color: transparent;
+    /* border: 1px solid gray;
+    background-color: var(--col2); */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.workcard .poster {
+    width: 100%;
+    aspect-ratio: 16/9;
+    background-color: black;
+}
+
+.workcard .poster img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.workcard .workcardtext {
+
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.875);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 80%;
+    min-height: 200px;
+    justify-content: center;
+    position: relative;
+    top: -50px;
+}
+
+.workcard .workcardtext h2 {
+    font-size: 18px;
+    color: var(--col2);
+}
+
+.workcard .workcardtext p {
+    font-size: 14px;
+    color: var(--col3);
+}
+
+.workcard .workcardtext a {
+    text-decoration: none;
+    background-color: transparent;
+    width: max-content;
+    padding: 1px 20px;
+    font-size: 14px;
+    border: 1px dashed var(--col2);
+    color: var(--col2);
+    cursor: pointer;
+}
+
+.workcard .workcardtext a:hover {
+    background-color: var(--col2);
+    color: var(--col4);
+}
+
+
+.carousel{
+    position: relative;
+    padding: 20px;
+}
+.leftbtn{
+    background-color: var(--col2);
+    color: var(--col4);
+
+    border: none;
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translate(-0%, -50%);
+    cursor: pointer;
+}
+.rightbtn{
+    background-color: var(--col2);
+    color: var(--col4);
+    border: none;
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translate(-0%, -50%);
+    cursor: pointer;
+}
+@media (max-width:1000px) {
+    .work h2 {
+        font-size: 13px;
+
+    }
+}
+

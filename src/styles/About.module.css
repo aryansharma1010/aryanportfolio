@@ -1,0 +1,107 @@
+.aboutpage {
+    min-height: 100vh;
+    padding-top: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    margin-bottom: 5%;
+}
+
+.aboutpage .row {
+    display: flex;
+    gap: 20px;
+    height: 603px;
+    width: 974px;
+    /* background-color: aqua; */
+}
+
+
+.aboutpage .row img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.aboutpage .quote {
+    height: 100%;
+    width: 50%;
+    position: relative;
+}
+
+.aboutpage .textbox {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    /* justify-content: center; */
+    gap: 10px;
+    width: 90%;
+    position: absolute;
+    bottom: 5%;
+}
+
+.aboutpage .textbox p {
+    color: var(--col1);
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.aboutpage .textbox .name {
+    text-align: right;
+    color: var(--col2);
+    font-weight: 500;
+}
+
+.aboutpage .aboutin {
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    padding: 0px 10px;
+    width: 50%;
+}
+
+.aboutpage .aboutin h1 {
+    background-color: var(--col2);
+    padding: 5px 10px;
+    width: max-content;
+    margin: 0 auto;
+}
+
+.aboutpage .aboutin .para {
+    font-size: 16px;
+    word-spacing: 10px;
+}
+
+@media (max-width: 1050px) {
+    .aboutpage .row {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 20px;
+        height: auto;
+        width: 100%;
+        /* background-color: aqua; */
+    }
+
+    .aboutpage .quote {
+        width: 640px;
+        height: 764px;
+    }
+
+    .aboutpage .aboutin {
+        width: 640px;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 670px) {
+    .aboutpage .quote {
+        width: 95%;
+        height: auto;
+    }
+    .aboutpage .aboutin {
+        width: 95%;
+        gap: 20px;
+    }
+}
