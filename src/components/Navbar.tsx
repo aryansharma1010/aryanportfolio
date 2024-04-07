@@ -26,7 +26,7 @@ const Navbar: React.FC = () => {
                 </li>
                 <li>
                     <Link href="/work">
-                        <span className={pathname.includes('/work') ? styles.active : ''}>Work</span>
+                        <span className={pathname.includes('/work') ? styles.active : ''}>Projects</span>
                     </Link>
                 </li>
                 <li>
