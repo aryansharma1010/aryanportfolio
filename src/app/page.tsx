@@ -3,8 +3,22 @@ import Image from "next/image";
 import styles from "@/styles/Homepage.module.css";
 import bgImg from "@/assets/shera2.png";
 import { TypeAnimation } from "react-type-animation";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
+  const router = useRouter();
+
+  const handleLeftButtonClick = () => {
+    window.open(
+      "https://www.behance.net/gallery/227664911/CRM-Portfolio",
+      "_blank"
+    );
+  };
+
+  const handleRightButtonClick = () => {
+    router.push("/work");
+  };
+
   return (
     <div className={styles.homepage}>
       {/* <Image src={bgImg} alt="" className={styles.fullbg2} quality={1} /> */}
@@ -31,8 +45,15 @@ export default function Home() {
           </h2>
         </div>
         <div className={styles.profileImage}>
-          <button className={styles.leftButton}>CRM</button>
-          <button className={styles.rightButton}>MARKETING</button>
+          <button className={styles.leftButton} onClick={handleLeftButtonClick}>
+            CRM
+          </button>
+          <button
+            className={styles.rightButton}
+            onClick={handleRightButtonClick}
+          >
+            MARKETING
+          </button>
           <Image
             src={bgImg}
             alt="Aryan profile"

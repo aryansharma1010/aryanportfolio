@@ -393,7 +393,9 @@ export default function Home() {
                   <p>{item.description}</p>
                   <Link
                     href={item.routeto}
-                    target={item.routeto.includes("https") ? "_blank" : undefined}
+                    target={
+                      item.routeto.includes("https") ? "_blank" : undefined
+                    }
                     rel={
                       item.routeto.includes("https")
                         ? "noopener noreferrer"
@@ -418,7 +420,9 @@ export default function Home() {
                   <p>{item.description}</p>
                   <Link
                     href={item.routeto}
-                    target={item.routeto.includes("https") ? "_blank" : undefined}
+                    target={
+                      item.routeto.includes("https") ? "_blank" : undefined
+                    }
                     rel={
                       item.routeto.includes("https")
                         ? "noopener noreferrer"

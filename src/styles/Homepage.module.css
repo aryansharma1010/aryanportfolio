@@ -72,6 +72,18 @@
   object-fit: contain;
 }
 
+@keyframes floatButton {
+  0% {
+    transform: translateY(-50%); /* Starting position */
+  }
+  50% {
+    transform: translateY(calc(-50% - 70px)); /* Move up 120px */
+  }
+  100% {
+    transform: translateY(calc(-50% + 10px)); /* Move down 10px from start */
+  }
+}
+
 .leftButton, .rightButton {
   position: absolute;
   top: 78%;
@@ -88,23 +100,22 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s ease;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
   white-space: nowrap;
-  width: 120px; /* Fixed width for both buttons */
+  width: 120px;
   text-align: center;
+  animation: floatButton 4s ease-in-out infinite; /* Apply the animation */
 }
 
-.leftButton:hover, .rightButton:hover {
-  background-color: #e5b41f;
-  box-shadow: 0 0 10px rgba(247, 195, 33, 0.6);
-}
-
+/* Apply different animation delay to create a nice offset effect */
 .leftButton {
-  left: 10px; /* Increased margin from the edge */
+  left: -10px;
+  animation-delay: 0s;
 }
 
 .rightButton {
-  right: 10px; /* Increased margin from the edge */
+  right: -10px;
+  animation-delay: 2s; /* Offset the right button animation */
 }
 
 /* Mobile and tablet styles */
