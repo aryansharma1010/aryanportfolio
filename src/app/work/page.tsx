@@ -32,6 +32,7 @@ import WorkCard from "@/components/WorkCard";
 import Link from "next/link";
 import { FiChevronLeft } from "react-icons/fi";
 import { BiChevronRight } from "react-icons/bi";
+import { useEffect, useState } from "react";
 
 interface FULLWORK {
   heading: string;
@@ -345,6 +346,22 @@ export default function Home() {
       </div>
     );
   };
+  const [windowWidth, setWindowWidth] = useState(0);
+
+  useEffect(() => {
+    // Set initial width
+    setWindowWidth(window.innerWidth);
+
+    // Add event listener for window resize
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+    window.addEventListener("resize", handleResize);
+
+    // Clean up
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <div className={styles.workpage}>
       <div className={styles.textBox}>
@@ -359,35 +376,62 @@ export default function Home() {
       </div>
 
       <div className={styles.carousel}>
-        <Carousel
-          responsive={responsive}
-          arrows={false}
-          renderButtonGroupOutside={true}
-          customButtonGroup={<ButtonGroup />}
-        >
-          {fullWorkArray.map((item, index) => (
-            <div className={styles.workcard} key={index}>
-              <div className={styles.poster}>
-                <Image src={item.poster} alt="" quality={1} />
+        {windowWidth > 650 ? (
+          <Carousel
+            responsive={responsive}
+            arrows={false}
+            renderButtonGroupOutside={true}
+            customButtonGroup={<ButtonGroup />}
+          >
+            {fullWorkArray.map((item, index) => (
+              <div className={styles.workcard} key={index}>
+                <div className={styles.poster}>
+                  <Image src={item.poster} alt="" quality={1} />
+                </div>
+                <div className={styles.workcardtext}>
+                  <h2>{item.heading}</h2>
+                  <p>{item.description}</p>
+                  <Link
+                    href={item.routeto}
+                    target={item.routeto.includes("https") ? "_blank" : undefined}
+                    rel={
+                      item.routeto.includes("https")
+                        ? "noopener noreferrer"
+                        : undefined
+                    }
+                  >
+                    View
+                  </Link>
+                </div>
               </div>
-              <div className={styles.workcardtext}>
-                <h2>{item.heading}</h2>
-                <p>{item.description}</p>
-                <Link
-                  href={item.routeto}
-                  target={item.routeto.includes("https") ? "_blank" : undefined}
-                  rel={
-                    item.routeto.includes("https")
-                      ? "noopener noreferrer"
-                      : undefined
-                  }
-                >
-                  View
-                </Link>
+            ))}
+          </Carousel>
+        ) : (
+          <div className={styles.workGrid}>
+            {fullWorkArray.map((item, index) => (
+              <div className={styles.workcard} key={index}>
+                <div className={styles.poster}>
+                  <Image src={item.poster} alt="" quality={1} />
+                </div>
+                <div className={styles.workcardtext}>
+                  <h2>{item.heading}</h2>
+                  <p>{item.description}</p>
+                  <Link
+                    href={item.routeto}
+                    target={item.routeto.includes("https") ? "_blank" : undefined}
+                    rel={
+                      item.routeto.includes("https")
+                        ? "noopener noreferrer"
+                        : undefined
+                    }
+                  >
+                    View
+                  </Link>
+                </div>
               </div>
-            </div>
-          ))}
-        </Carousel>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );

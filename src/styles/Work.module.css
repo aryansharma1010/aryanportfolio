@@ -169,3 +169,33 @@
     }
 }
 
+.workGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  width: 100%;
+  padding: 20px;
+}
+
+/* For tablets (2 items per row) */
+@media (min-width: 480px) and (max-width: 650px) {
+  .workGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* For phones (1 item per row) */
+@media (max-width: 479px) {
+  .workGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Make sure workcard is properly styled in both carousel and grid */
+.workGrid .workcard {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+

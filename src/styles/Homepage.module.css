@@ -14,7 +14,7 @@
     top: 0;
     left: 0;
     z-index: -1;
-    background-color: rgba(0, 0, 0, 0.512)
+    background-color: rgba(0, 0, 0)
 }
 
 .fullbg2 {
@@ -29,6 +29,7 @@
 
 .textBox {
     width: 80%;
+    /* margin: 0 auto; */
 }
 
 .textBox h1 {
@@ -38,11 +39,85 @@
 }
 
 .textBox h2 {
-    font-size: 3.5rem;
+    font-size: 3rem;
     font-weight: 300;
     color: var(--col2);
 }
 
+.contentContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 40px;
+}
+
+.profileImage {
+  flex-shrink: 0;
+  height: 60vh;
+  position: relative;
+}
+
+.profileImage img {
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.profileImg {
+  height: 70vh;
+  width: auto;
+  object-fit: contain;
+}
+
+.leftButton, .rightButton {
+  position: absolute;
+  top: 78%;
+  transform: translateY(-50%);
+  background-color: #F7C321;
+  color: #000;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  width: 120px; /* Fixed width for both buttons */
+  text-align: center;
+}
+
+.leftButton:hover, .rightButton:hover {
+  background-color: #e5b41f;
+  box-shadow: 0 0 10px rgba(247, 195, 33, 0.6);
+}
+
+.leftButton {
+  left: 10px; /* Increased margin from the edge */
+}
+
+.rightButton {
+  right: 10px; /* Increased margin from the edge */
+}
+
+/* Mobile and tablet styles */
+@media (max-width: 768px) {
+  .contentContainer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .profileImage {
+    margin-top: 30px;
+  }
+}
 
 @media (max-width:700px) {
     .textBox h1 {
