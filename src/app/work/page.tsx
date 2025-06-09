@@ -3,7 +3,7 @@ import WorkSlider from "@/components/WorkSlider.js";
 import styles from "@/styles/Work.module.css";
 import yeKesiBimariHai from "@/assets/BrandingAds/yeKesiBimariHai.jpg";
 import crmPoster from "@/assets/CRM/CRMPoster.jpeg";
-import dMotion from "@/assets/CRM/3DMotion.jpeg";
+import dMotion from "@/assets/CRM/3dMotion.jpeg";
 import brandingForNeo from "@/assets/CRM/BrandingWorkForNeo.jpeg";
 import emailers from "@/assets/CRM/emailers.jpeg";
 import appBanners from "@/assets/CRM/inAppBanners.jpeg";
