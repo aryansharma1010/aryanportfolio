@@ -38,7 +38,7 @@ export default function Home() {
                 1000,
               ]}
               wrapper="span"
-              style={{ whiteSpace: "pre-line" }}
+              style={{ whiteSpace: "pre-line", color: "#ffc540" }}
               speed={20}
               repeat={Infinity}
             />
