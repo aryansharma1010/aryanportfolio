@@ -62,6 +62,7 @@ export default function Home() {
             quality={90}
             priority
             className={styles.profileImg}
+            sizes="(max-width: 768px) 100vw, 500px"
           />
         </div>
       </div>

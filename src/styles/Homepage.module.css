@@ -56,9 +56,10 @@
 }
 
 .profileImage {
-  flex-shrink: 0;
-  height: 60vh;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .profileImage img {
@@ -67,17 +68,17 @@
 }
 
 .profileImg {
-  height: 70vh;
-  width: auto;
+  width: 500px;
+  height: 500px;
   object-fit: contain;
 }
 
 @keyframes floatButton {
   0% {
-    transform: translateY(-50%); /* Starting position */
+    transform: translateY(-20%); /* Starting position */
   }
   50% {
-    transform: translateY(calc(-50% - 70px)); /* Move up 120px */
+    transform: translateY(calc(-50% - 40px)); /* Move up 120px */
   }
   100% {
     transform: translateY(calc(-50% + 10px)); /* Move down 10px from start */
@@ -86,7 +87,7 @@
 
 .leftButton, .rightButton {
   position: absolute;
-  top: 78%;
+  top: 65%;
   transform: translateY(-50%);
   background-color: #F7C321;
   color: #000;
@@ -102,23 +103,23 @@
   justify-content: center;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
   white-space: nowrap;
-  width: 120px;
+  width: 90px;
   text-align: center;
   animation: floatButton 4s ease-in-out infinite; /* Apply the animation */
 }
 
 /* Apply different animation delay to create a nice offset effect */
 .leftButton {
-  left: -10px;
+  left: 10px;
   animation-delay: 0s;
 }
 
 .rightButton {
-  right: -10px;
+  right: 10px;
   animation-delay: 2s; /* Offset the right button animation */
 }
 
-/* Mobile and tablet styles */
+/* Media queries for responsive design */
 @media (max-width: 768px) {
   .contentContainer {
     flex-direction: column;
@@ -126,7 +127,38 @@
   }
 
   .profileImage {
-    margin-top: 30px;
+    width: 90%;
+    margin: 0 auto;
+  }
+  
+  .profileImg {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100%;
+  }
+  
+  .leftButton, .rightButton {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+  
+  .leftButton {
+    left: 5%;
+  }
+  
+  .rightButton {
+    right: 5%;
+  }
+}
+
+@media (max-width: 480px) {
+  .profileImage {
+    width: 95%;
+  }
+  
+  .leftButton, .rightButton {
+    padding: 6px 10px;
+    font-size: 12px;
   }
 }
 
